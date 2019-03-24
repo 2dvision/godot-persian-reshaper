@@ -155,10 +155,13 @@ func reshape(_str : String) -> String:
 		if _str[letter] in LETTERS.keys():
 			# first letter
 			if previous(letter, _str) == NOT_SUPPORTED:
-				if LETTERS.get(_str[letter])[INITIAL] == '':
+				if next(letter, _str) == NOT_SUPPORTED:
 					_str[letter] = LETTERS.get(_str[letter])[ISOLATED]
 				else:
-					_str[letter] = LETTERS.get(_str[letter])[INITIAL]
+					if LETTERS.get(_str[letter])[INITIAL] == '':
+						_str[letter] = LETTERS.get(_str[letter])[ISOLATED]
+					else:
+						_str[letter] = LETTERS.get(_str[letter])[INITIAL]
 			# last letter
 			elif next(letter, _str) == NOT_SUPPORTED:
 				if previous(letter, _str) == ISOLATED or previous(letter, _str) == FINAL:
