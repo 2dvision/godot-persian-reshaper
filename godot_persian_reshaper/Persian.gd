@@ -10,12 +10,13 @@ replacement format:
 extends Node
 
 
-const ISOLATED : = 0
-const INITIAL : = 1
-const MEDIAL : = 2
-const FINAL : = 3
-
-const NOT_SUPPORTED : = -1
+enum {
+	NOT_SUPPORTED = -1,
+	ISOLATED,
+	INITIAL,
+	MEDIAL,
+	FINAL
+}
 
 const LETTERS : = {
 	# alef
