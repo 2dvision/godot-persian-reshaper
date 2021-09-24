@@ -128,10 +128,7 @@ func reverse_brackets(_str : String) -> String:
 	for letter in _str.length():
 		for bracke in BRACKETS:
 			if _str[letter] in bracke:
-				if bracke.find(_str[letter]) == 0:
-					_str[letter] = bracke[1]
-				else:
-					_str[letter] = bracke[0]
+				_str[letter] = bracke[int(bracke.find(_str[letter]) == 0)]
 	return _str
 
 
