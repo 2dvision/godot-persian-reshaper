@@ -238,7 +238,7 @@ func wrap(_str : String, _is_wrap : bool = false, _len : int = -1) -> String:
 	for space in _str.length():
 		if _str[space] == ' ':
 			if space > next_len:
-				newline.append(_str.substr(first, space-first))
+				newline.append(_str.substr(first, space - first))
 				next_len += _len
 				first = space + 1
 	if first < _str.length():
