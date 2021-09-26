@@ -121,18 +121,14 @@ func reverse(_str : String) -> String:
 
 # TODO: Fix English words order inside Persian text.
 func reverse_english_words(_str : String) -> String:
-	var ltr : = ''
-	return ltr
+	return ''
 
 
 func reverse_brackets(_str : String) -> String:
 	for letter in _str.length():
 		for bracke in BRACKETS:
 			if _str[letter] in bracke:
-				if bracke.find(_str[letter]) == 0:
-					_str[letter] = bracke[1]
-				else:
-					_str[letter] = bracke[0]
+				_str[letter] = bracke[int(bracke.find(_str[letter]) == 0)]
 	return _str
 
 
@@ -239,10 +235,7 @@ func wrap(_str : String, _is_wrap : bool = false, _len : int = -1) -> String:
 	for space in _str.length():
 		if _str[space] == ' ':
 			if space > next_len:
-				if first == 0:
-					newline.append(_str.substr(first, space))
-				else:
-					newline.append(_str.substr(first, space-first))
+				newline.append(_str.substr(first, space - first))
 				next_len += _len
 				first = space + 1
 	if first < _str.length():
@@ -252,9 +245,8 @@ func wrap(_str : String, _is_wrap : bool = false, _len : int = -1) -> String:
 
 	var _str_wrap = ''
 	for sentence in newline.size():
+		_str_wrap += newline[sentence]
 		if sentence < newline.size() - 1:
-			_str_wrap += newline[sentence] + '\n'
-		else:
-			_str_wrap += newline[sentence]
+			_str_wrap += '\n'
 
 	return _str_wrap
