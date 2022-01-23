@@ -1,0 +1,222 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/persian_reshaper/MainPanel.gd" type="Script" id=1]
+[ext_resource path="res://addons/persian_reshaper/font/Vazir-Thin.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.164706, 0.180392, 0.215686, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 14
+custom_constants/margin_top = 14
+custom_constants/margin_left = 14
+custom_constants/margin_bottom = 14
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 14.0
+margin_top = 14.0
+margin_right = 1010.0
+margin_bottom = 586.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 996.0
+margin_bottom = 170.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 996.0
+margin_bottom = 76.0
+custom_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer"]
+margin_right = 996.0
+margin_bottom = 37.0
+custom_constants/separation = 10
+
+[node name="Clean" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 88.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "  ﻥﺩﺮﮐ ﮎﺎﭘ  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input" type="LineEdit" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 98.0
+margin_right = 996.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+align = 2
+placeholder_text = "ﺪﯿﻨﮐ ﺩﺭﺍﻭ ﺎﺠﻨﯾﺍ ﺍﺭ ﺩﻮﺧ ﻦﺘﻣ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reshape" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 996.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 4 )
+text = "ﻞﯾﺪﺒﺗ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 80.0
+margin_right = 996.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 94.0
+margin_right = 996.0
+margin_bottom = 170.0
+custom_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2"]
+margin_right = 996.0
+margin_bottom = 37.0
+custom_constants/separation = 10
+
+[node name="Donate" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2/HBoxContainer2"]
+margin_right = 88.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 5 )
+text = "ﯽﻟﺎﻣ ﺖﯾﺎﻤﺣ"
+
+[node name="Output" type="LineEdit" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2/HBoxContainer2"]
+margin_left = 98.0
+margin_right = 996.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+align = 2
+editable = false
+placeholder_text = "ﻩﺪﺷ ﻞﯾﺪﺒﺗ ﻦﺘﻣ ﺖﻓﺎﯾﺭﺩ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copy" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2"]
+margin_top = 47.0
+margin_right = 996.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 4 )
+text = "ﻦﺘﻣ ﯽﭙﻛ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guide" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+margin_top = 200.0
+margin_right = 996.0
+margin_bottom = 572.0
+rect_min_size = Vector2( 0, 370 )
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]ﺢﯿﺿﻮﺗ[/right]
+[right]----------[/right]
+[right].ﺪﻨﮐ‌ﯽﻣ ﺭﺎﮐ 3.x ﻪﺨﺴﻧ ﻦﯿﺠﻧﺍ ﻭﺩﻮﮔ ﺎﺑ ﻪﻧﻭﺰﻓﺍ ﻦﯾﺍ[/right]
+[right].ﺪﻨﮐ‌ﯽﻤﻧ ﯽﻧﺎﺒﯿﺘﺸﭘ ﯽﺳﺭﺎﭘ ﺪﻨﻧﺎﻣ ﭗﭼ ﻪﺑ ﺖﺳﺍﺭ ﯼﺎﻫ‌ﻥﺎﺑﺯ ﺯﺍ ﻦﯿﺠﻧﺍ ﻭﺩﻮﮔ[/right]
+[right].ﺖﺳﺍ ﻩﺪﺷ ﻞﺣ ۴ ﻪﺨﺴﻧ ﻦﯿﺠﻧﺍ ﻭﺩﻮﮔ ﺭﺩ ﻞﮑﺸﻣ ﻦﯾﺍ ﺍﺮﻫﺎﻇ[/right]
+
+[right]ﺕﺎﻤﯿﻈﻨﺗ[/right]
+[right]----------[/right]
+[right].ﺪﯿﻨﮑﻧ ﻩﺩﺎﻔﺘﺳﺍ Autowrap ﺯﺍ Label ﺩﻮﻧ ﯼﺍﺮﺑ :ﻪﺘﮑﻧ[/right]
+
+[right]ﺪﯿﻫﺩ ﺮﯿﯿﻐﺗ ﺍﺭ ﺮﯾﺯ ﺩﺭﺍﻮﻣ ﻞﺒﯿﻟ ﺕﺎﻤﯿﻈﻨﺗ ﺭﺩ ﺲﭙﺳ ،ﺪﯿﻨﮐ ﻪﻓﺎﺿﺍ ﻞﺒﯿﻟ ﺩﻮﻧ ﮏﯾ[/right]
+[right]Right ﻪﺑ Align ﻪﻨﯾﺰﮔ .۱[/right]
+[right]Begin ﻪﺑ Grow Direction > Horizontal ﻪﻨﯾﺰﮔ .۲[/right]
+
+[right]ﻩﺩﺎﻔﺘﺳﺍ ﺵﻭﺭ[/right]
+[right]----------[/right]
+[right].ﺪﯿﻨﮐ ﻩﺩﺎﻔﺘﺳﺍ ﻻﺎﺑ ﯽﮑﯿﻓﺍﺮﮔ ﻝﺪﺒﻣ ﺯﺍ ﺪﯿﻧﺍﻮﺗ‌ﯽﻣ ﺎﻫ‌ﻦﺘﻣ ﻞﯾﺪﺒﺗ ﯼﺍﺮﺑ[/right]
+
+[right].ﺖﭙﯾﺮﮑﺳﺍ ﺭﺩ ﻩﺩﺎﻔﺘﺳﺍ ﯼﺍﺮﺑ ﺮﯾﺯ ﺵﻭﺭ ﻪﺑ ﺎﯾ[/right]
+[right]ﺪﯿﻧﺰﺑ ﺍﺪﺻ ﻞﮑﺷ ﻦﯾﺍ ﻪﺑ ﺵﺍ‌ﺖﭙﯾﺮﮑﺳﺍ ﺭﺩ ﺍﺭ ﻞﺒﯿﻟ ،ﻂﺧ ﮏﺗ ﯼﺎﻫ‌ﻦﺘﻣ ﯼﺍﺮﺑ[/right]
+
+var txt := \"پارسی شکر است.\"
+$Label.text = Persian.reshaper(txt)
+
+[right]ﺩﻮﺷ ﻝﺎﻌﻓ ﻂﺧ ﺪﻨﭼ ﻭ ﯽﻧﻻﻮﻃ ﯼﺎﻫ‌ﻦﺘﻣ ﯼﺍﺮﺑ Autowrap ﺖﻟﺎﺣ ﺪﯿﻫﺍﻮﺧ‌ﯽﻣ ﻪﮐ ﯽﺗﺭﻮﺻ ﺭﺩ[/right]
+[right].ﺪﯿﻨﮐ ﺩﺭﺍﻭ ﯼﺩﺪﻋ ﻞﮑﺷ ﻪﺑ ﺍﺭ ﺖﺳﺍ «ﻂﺧ ﻝﻮﻃ» ﻪﮐ ﻡﻭﺩ ﺮﺘﻣﺍﺭﺎﭘ[/right]
+
+var txt := \"پارسی شکر است.\"
+$Label.text = Persian.reshaper(txt, 36)
+
+"
+text = "ﺢﯿﺿﻮﺗ
+----------
+.ﺪﻨﮐ‌ﯽﻣ ﺭﺎﮐ 3.x ﻪﺨﺴﻧ ﻦﯿﺠﻧﺍ ﻭﺩﻮﮔ ﺎﺑ ﻪﻧﻭﺰﻓﺍ ﻦﯾﺍ
+.ﺪﻨﮐ‌ﯽﻤﻧ ﯽﻧﺎﺒﯿﺘﺸﭘ ﯽﺳﺭﺎﭘ ﺪﻨﻧﺎﻣ ﭗﭼ ﻪﺑ ﺖﺳﺍﺭ ﯼﺎﻫ‌ﻥﺎﺑﺯ ﺯﺍ ﻦﯿﺠﻧﺍ ﻭﺩﻮﮔ
+.ﺖﺳﺍ ﻩﺪﺷ ﻞﺣ ۴ ﻪﺨﺴﻧ ﻦﯿﺠﻧﺍ ﻭﺩﻮﮔ ﺭﺩ ﻞﮑﺸﻣ ﻦﯾﺍ ﺍﺮﻫﺎﻇ
+
+ﺕﺎﻤﯿﻈﻨﺗ
+----------
+.ﺪﯿﻨﮑﻧ ﻩﺩﺎﻔﺘﺳﺍ Autowrap ﺯﺍ Label ﺩﻮﻧ ﯼﺍﺮﺑ :ﻪﺘﮑﻧ
+
+ﺪﯿﻫﺩ ﺮﯿﯿﻐﺗ ﺍﺭ ﺮﯾﺯ ﺩﺭﺍﻮﻣ ﻞﺒﯿﻟ ﺕﺎﻤﯿﻈﻨﺗ ﺭﺩ ﺲﭙﺳ ،ﺪﯿﻨﮐ ﻪﻓﺎﺿﺍ ﻞﺒﯿﻟ ﺩﻮﻧ ﮏﯾ
+Right ﻪﺑ Align ﻪﻨﯾﺰﮔ .۱
+Begin ﻪﺑ Grow Direction > Horizontal ﻪﻨﯾﺰﮔ .۲
+
+ﻩﺩﺎﻔﺘﺳﺍ ﺵﻭﺭ
+----------
+.ﺪﯿﻨﮐ ﻩﺩﺎﻔﺘﺳﺍ ﻻﺎﺑ ﯽﮑﯿﻓﺍﺮﮔ ﻝﺪﺒﻣ ﺯﺍ ﺪﯿﻧﺍﻮﺗ‌ﯽﻣ ﺎﻫ‌ﻦﺘﻣ ﻞﯾﺪﺒﺗ ﯼﺍﺮﺑ
+
+.ﺖﭙﯾﺮﮑﺳﺍ ﺭﺩ ﻩﺩﺎﻔﺘﺳﺍ ﯼﺍﺮﺑ ﺮﯾﺯ ﺵﻭﺭ ﻪﺑ ﺎﯾ
+ﺪﯿﻧﺰﺑ ﺍﺪﺻ ﻞﮑﺷ ﻦﯾﺍ ﻪﺑ ﺵﺍ‌ﺖﭙﯾﺮﮑﺳﺍ ﺭﺩ ﺍﺭ ﻞﺒﯿﻟ ،ﻂﺧ ﮏﺗ ﯼﺎﻫ‌ﻦﺘﻣ ﯼﺍﺮﺑ
+
+var txt := \"پارسی شکر است.\"
+$Label.text = Persian.reshaper(txt)
+
+ﺩﻮﺷ ﻝﺎﻌﻓ ﻂﺧ ﺪﻨﭼ ﻭ ﯽﻧﻻﻮﻃ ﯼﺎﻫ‌ﻦﺘﻣ ﯼﺍﺮﺑ Autowrap ﺖﻟﺎﺣ ﺪﯿﻫﺍﻮﺧ‌ﯽﻣ ﻪﮐ ﯽﺗﺭﻮﺻ ﺭﺩ
+.ﺪﯿﻨﮐ ﺩﺭﺍﻭ ﯼﺩﺪﻋ ﻞﮑﺷ ﻪﺑ ﺍﺭ ﺖﺳﺍ «ﻂﺧ ﻝﻮﻃ» ﻪﮐ ﻡﻭﺩ ﺮﺘﻣﺍﺭﺎﭘ
+
+var txt := \"پارسی شکر است.\"
+$Label.text = Persian.reshaper(txt, 36)
+
+"
