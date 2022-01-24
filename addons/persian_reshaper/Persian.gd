@@ -148,7 +148,7 @@ static func reshape(string: String) -> String:
 	string = string.replace("لا", "ﻻ")
 
 	for letter in string.length():
-		if string[letter] in LETTERS.keys():
+		if LETTERS.keys().has(string[letter]):
 			var replacement: Array = LETTERS.get(string[letter])
 			# first letter
 			if previous(letter, string) == NOT_SUPPORTED:
@@ -226,8 +226,8 @@ static func wrap(string: String, line_length: int = 0) -> String:
 	if result:
 		string = ""
 		result.invert()
-		for i in result:
-			string += i.get_string()
-			if i != result[ result.size() - 1 ]:
+		for sentence in result:
+			string += sentence.get_string()
+			if sentence != result[ result.size() - 1 ]:
 				string += "\n"
 	return string
