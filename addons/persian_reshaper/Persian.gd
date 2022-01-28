@@ -98,8 +98,7 @@ const BRACKETS := [
 static func reshaper(string: String, line_length: int = 0) -> String:
 	if string.empty():
 		return ""
-	if not line_length <= 0:
-		string = wrap(string, line_length)
+	string = wrap(string, line_length)
 	string = reshape(string)
 	string = invert(string)
 	return string
@@ -220,8 +219,10 @@ static func next(letter: int, string: String) -> int:
 
 
 static func wrap(string: String, line_length: int = 0) -> String:
+	if line_length <= 0:
+		return string
 	var regex = RegEx.new()
-	regex.compile("(.{1," + str(line_length) + "})( +|$\n?)|(.{1," + str(line_length) + "})")
+	regex.compile("(.{1," + str(line_length) + "})( |$)")
 	var result: Array = regex.search_all(string)
 	if result:
 		string = ""
