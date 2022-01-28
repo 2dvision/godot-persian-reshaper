@@ -222,7 +222,7 @@ static func wrap(string: String, line_length: int = 0) -> String:
 	if line_length <= 0:
 		return string
 	var regex = RegEx.new()
-	regex.compile("(.{1," + str(line_length) + "})( |$)")
+	regex.compile("(.{1," + str(line_length) + "})( +|$)")
 	var result: Array = regex.search_all(string)
 	if result:
 		string = ""
