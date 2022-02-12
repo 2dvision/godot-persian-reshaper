@@ -2,13 +2,13 @@ tool
 extends VBoxContainer
 
 
-onready var InputText := $VBoxContainer/VBoxContainer/HBoxContainer/Input
-onready var OutputText := $VBoxContainer/VBoxContainer2/HBoxContainer2/Output
+onready var InputText := $HBoxContainer/Input
+onready var OutputText := $HBoxContainer2/Output
 
-onready var btn_reshape := $VBoxContainer/VBoxContainer/Reshape
-onready var btn_clean := $VBoxContainer/VBoxContainer/HBoxContainer/Clean
-onready var btn_copy := $VBoxContainer/VBoxContainer2/Copy
-onready var btn_donate := $VBoxContainer/VBoxContainer2/HBoxContainer2/Donate
+onready var btn_reshape := $HBoxContainer/Reshape
+onready var btn_clean := $HBoxContainer/Clean
+onready var btn_copy := $HBoxContainer2/Copy
+onready var btn_donate := $HBoxContainer2/Donate
 
 
 func _ready() -> void:
