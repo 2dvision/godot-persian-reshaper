@@ -32,4 +32,4 @@ func _on_Copy_pressed() -> void:
 
 
 func _on_Donate_pressed() -> void:
-	OS.shell_open("https://idpay.ir/2dvision")
+	pass

@@ -83,17 +83,18 @@ custom_constants/separation = 15
 [node name="Donate" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_right = 88.0
 margin_bottom = 37.0
+rect_min_size = Vector2( 88, 0 )
 focus_next = NodePath("../../HBoxContainer/Input")
 focus_previous = NodePath("../Copy")
 custom_fonts/font = SubResource( 5 )
-text = "ﯽﻟﺎﻣ ﺖﯾﺎﻤﺣ"
+flat = true
 
 [node name="Copy" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 103.0
 margin_right = 203.0
 margin_bottom = 37.0
 rect_min_size = Vector2( 100, 0 )
-focus_next = NodePath("../Donate")
+focus_next = NodePath("../../HBoxContainer/Input")
 focus_previous = NodePath("../../HBoxContainer/Clean")
 custom_fonts/font = ExtResource( 3 )
 custom_styles/hover = ExtResource( 5 )
